@@ -1,7 +1,8 @@
 @charset 'utf-8';
 @font-face {
   font-family: 'Ownglyph_jooreeletter-Rg';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_jooreeletter-Rg.woff2') format('woff2');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_jooreeletter-Rg.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +10,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Ownglyph_jooreeletter-Rg';
 }
 ul,
 ol,
@@ -21,6 +21,7 @@ img {
 }
 body {
   overflow: hidden;
+  font-family: 'Ownglyph_jooreeletter-Rg';
 }
 .hidden {
   display: none;
@@ -33,7 +34,8 @@ body {
 /* main */
 main > section {
   height: 100vh;
-  padding: 150px 100px;
+  padding: 50px 100px;
+  position: relative;
 }
 main > section.section1 {
   background: url(/img/bg.png) no-repeat 50% / cover;
@@ -47,17 +49,38 @@ main > section.section1 h3 {
 }
 main > section.section1 h1 {
   width: 550px;
-  height: 250px;
+  height: 550px;
   margin: 0 auto;
+  margin-top: 50px;
 }
 main > section.section1 h1 .brilliant {
   width: 100%;
-  height: 100%;
+  height: 50%;
   background: url(../img/main-title1.png) no-repeat 50% / contain;
+  position: relative;
+}
+
+main > section.section1 h1 .brilliant::before {
+  content: '';
+  top: 20px;
+  left: 160px;
+  width: 86px;
+  height: 89px;
+  background: url(../img/main-star1.png) no-repeat 50% / contain;
+  position: absolute;
+}
+main > section.section1 h1 .brilliant::after {
+  content: '';
+  top: 28px;
+  left: 300px;
+  width: 74px;
+  height: 81px;
+  background: url(../img/main-star2.png) no-repeat 50% / contain;
+  position: absolute;
 }
 main > section.section1 h1 .records {
   width: 100%;
-  height: 100%;
+  height: 50%;
   margin-top: -30px;
   background: url(../img/main-title2.png) no-repeat 50% / contain;
 }
@@ -65,11 +88,12 @@ main > section.section1 p {
   font-size: 2.2rem;
   text-align: center;
   background: rgba(166, 227, 105, 0.2);
-  top: 330px;
+  top: 150px;
   position: relative;
 }
 main > section.section1 p b {
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 main > section.section1 p::before {
   content: '';
@@ -87,7 +111,7 @@ main > section.section1 p::before {
   height: 619px;
   position: relative;
   background: url(../img/main-picture-picture.png) no-repeat 50% / contain;
-  top: -678px;
+  top: -930px;
   left: -100px;
 }
 .wrap-paper::before {
@@ -101,12 +125,169 @@ main > section.section1 p::before {
   background: url(../img/main-picture-paper.png) no-repeat 50% / contain;
   z-index: 1;
 }
-
-main > section.section2 {
-  background: yellow;
-  background: url(/img/bg.png) no-repeat 50% / cover;
+.bulb-btn {
+  display: block;
+  width: 50px;
+  height: 83px;
+  top: 10px;
+  right: 50px;
+  position: absolute;
+  background: url(../img/main-bulb.png) no-repeat 50% / contain;
+  cursor: pointer;
 }
 
+.blur-wrap li:nth-of-type(1) {
+  background: url(../img/blur-blue.png) no-repeat 50% / contain;
+  width: 466px;
+  height: 308px;
+  position: absolute;
+  top: -123px;
+  left: 442px;
+  z-index: 1;
+}
+.blur-wrap li:nth-child(2) {
+  background: url(../img/blur-pink.png) no-repeat 50% / contain;
+  width: 500px;
+  height: 408px;
+  position: absolute;
+  top: 127px;
+  right: 100px;
+  z-index: 1;
+}
+.blur-wrap li:nth-child(3) {
+  background: url(../img/blur-yellow.png) no-repeat 50% / contain;
+  width: 316px;
+  height: 416px;
+  position: absolute;
+  top: 580px;
+  left: -59px;
+  z-index: 1;
+}
+.blur-wrap li:nth-child(4) {
+  background: url(../img/blur-blue.png) no-repeat 50% / contain;
+  width: 628px;
+  height: 437px;
+  position: absolute;
+  top: 598px;
+  right: -211px;
+  z-index: 1;
+  overflow-y: hidden;
+}
+/* About Me */
+main > section.section2 {
+  background: url(/img/bg.png) no-repeat 50% / cover;
+}
+.section2 h2 {
+  display: block;
+  width: 360px;
+  height: 88px;
+  top: 60px;
+  left: 100px;
+  position: absolute;
+  background: url(../img/aboutme-title.png) no-repeat 50% / contain;
+}
+.pic-wrap {
+  position: relative;
+}
+.pic-wrap li {
+  position: absolute;
+}
+.pic-wrap li:nth-child(1) {
+  width: 265px;
+  height: 445px;
+  background: url(../img/aboutme-pic.png) no-repeat 50% / contain;
+  top: 335px;
+  left: 260px;
+  z-index: 4;
+}
+.pic-wrap li:nth-child(2) {
+  width: 550px;
+  height: 564px;
+  background: url(../img/aboutme-pic2.png) no-repeat 50% / contain;
+  top: 237px;
+  left: 90px;
+  z-index: 3;
+}
+.pic-wrap li:nth-child(3) {
+  width: 672px;
+  height: 713px;
+  background: url(../img/aboutme-pic3.png) no-repeat 50% / contain;
+  top: 159px;
+  left: 37px;
+  z-index: 2;
+}
+.pic-wrap li:nth-child(4) {
+  width: 574px;
+  height: 550px;
+  background: url(../img/aboutme-pic4.png) no-repeat 50% / contain;
+  top: 202px;
+  left: 51px;
+  z-index: 1;
+}
+.pic-wrap li:nth-child(5) {
+  width: 651px;
+  height: 513px;
+  background: url(../img/aboutme-pic5.png) no-repeat 50% / contain;
+  top: 266px;
+  left: 40px;
+}
+
+.introduce-slider-wrap {
+  width: 700px;
+  height: 610px;
+  background: #ff0;
+  position: absolute;
+  top: 230px;
+  right: 200px;
+  overflow-x: hidden;
+}
+.introduce-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 50px;
+}
+.swiper-slide .content {
+  width: 100%;
+  height: 100%;
+  padding: 70px 67px;
+  margin: 0 auto;
+  text-align: center;
+  word-break: keep-all;
+}
+.swiper-slide .content h3 {
+  font-size: 36px;
+}
+.swiper-slide .content p {
+  font-size: 24px;
+  margin-top: 47px;
+  line-height: 1.2;
+}
+.swiper-slide .content-tag {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 15px;
+}
+.swiper-slide .content-tag li {
+  width: 122px;
+  height: 48px;
+  font-size: 27px;
+  padding: 10px;
+}
+.swiper-slide .content-tag li:nth-child(1) {
+  background: url(../img/aboutme-tape1.png) no-repeat 50% / contain;
+}
+.swiper-slide .content-tag li:nth-child(2) {
+  background: url(../img/aboutme-tape2.png) no-repeat 50% / contain;
+}
+.swiper-slide .content-tag li:nth-child(3) {
+  background: url(../img/aboutme-tape3.png) no-repeat 50% / contain;
+}
+.swiper-slide .content-tag li:nth-child(4) {
+  background: url(../img/aboutme-tape4.png) no-repeat 50% / contain;
+}
 main > section.section3 {
   background: green;
   background: url(/img/bg.png) no-repeat 50% / cover;
@@ -116,6 +297,7 @@ main > section.section4 {
   background: blue;
   background: url(/img/bg.png) no-repeat 50% / cover;
 }
+
 #footer {
   height: 50px;
   line-height: 50px;
@@ -149,6 +331,8 @@ main > section.section4 {
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
+
+  z-index: 10;
 }
 .indicator button {
   border: none;
@@ -159,34 +343,42 @@ main > section.section4 {
   cursor: pointer;
 }
 .indicator button:nth-child(1) {
-  background: #ffe828;
+  background: #808080;
 }
 .indicator button:nth-child(2) {
   background: #32cd32;
 }
 .indicator button:nth-child(3) {
+  background: #ffe828;
+}
+
+.indicator button:nth-child(4) {
   background: #ff1493;
 }
-.indicator button:nth-child(4) {
+.indicator button:nth-child(5) {
   background: #1e6cfc;
 }
 .indicator button.on {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   width: 100px;
 }
 .indicator button.on:nth-child(1)::before {
-  content: 'About Me';
+  content: 'Intro';
   color: #000;
 }
 .indicator button.on:nth-child(2)::before {
-  content: 'Works';
+  content: 'About Me';
   color: #000;
 }
 .indicator button.on:nth-child(3)::before {
-  content: 'Experience';
+  content: 'Works';
   color: #000;
 }
 .indicator button.on:nth-child(4)::before {
+  content: 'Experience';
+  color: #000;
+}
+.indicator button.on:nth-child(5)::before {
   content: 'Contact Me';
   color: #fff;
 }

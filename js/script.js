@@ -99,4 +99,35 @@ $(function () {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  // works slider
+  const worksSlider = new Swiper('.works-slider', {
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  // 카드 클릭 이벤트 핸들러 설정
+  $('.card').on('click', function () {
+    const $this = $(this);
+    $this.addClass('spin');
+
+    // 애니메이션이 끝나고 실제로 뒤집는 동작 설정
+    setTimeout(function () {
+      $this.removeClass('spin').toggleClass('flipped');
+    }, 800); // 애니메이션 시간과 맞춤
+  });
 });

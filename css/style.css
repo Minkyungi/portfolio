@@ -51,7 +51,7 @@ main > section.section1 h1 {
   width: 550px;
   height: 550px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 main > section.section1 h1 .brilliant {
   width: 100%;
@@ -81,14 +81,14 @@ main > section.section1 h1 .brilliant::after {
 main > section.section1 h1 .records {
   width: 100%;
   height: 50%;
-  margin-top: -30px;
+  margin-top: -70px;
   background: url(../img/main-title2.png) no-repeat 50% / contain;
 }
 main > section.section1 p {
   font-size: 2.2rem;
   text-align: center;
   background: rgba(166, 227, 105, 0.2);
-  top: 150px;
+  top: 110px;
   position: relative;
 }
 main > section.section1 p b {
@@ -111,7 +111,7 @@ main > section.section1 p::before {
   height: 619px;
   position: relative;
   background: url(../img/main-picture-picture.png) no-repeat 50% / contain;
-  top: -930px;
+  top: -980px;
   left: -100px;
 }
 .wrap-paper::before {
@@ -125,7 +125,7 @@ main > section.section1 p::before {
   background: url(../img/main-picture-paper.png) no-repeat 50% / contain;
   z-index: 1;
 }
-.bulb-btn {
+.portfolio-process {
   display: block;
   width: 50px;
   height: 83px;
@@ -184,7 +184,7 @@ main > section.section2 {
   top: 60px;
   left: 100px;
   position: absolute;
-  background: url(../img/aboutme-title.png) no-repeat 50% / contain;
+  background: url(../img/aboutme-title.png) no-repeat 0 0 / contain;
 }
 .pic-wrap {
   position: relative;
@@ -289,15 +289,225 @@ main > section.section2 {
   background: url(../img/aboutme-tape4.png) no-repeat 50% / contain;
 }
 main > section.section3 {
-  background: green;
   background: url(/img/bg.png) no-repeat 50% / cover;
+}
+
+/* works */
+.section3 h2 {
+  display: block;
+  width: 360px;
+  height: 88px;
+  top: 60px;
+  left: 100px;
+  position: absolute;
+  background: url(../img/works-title.png) no-repeat 0 0 / contain;
+}
+.works-slider-wrap {
+  width: 1697px;
+  height: 730px;
+  background: #ff0;
+  position: absolute;
+  top: 185px;
+  /* right: 200px; */
+  overflow: hidden;
+}
+.works-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.swiper-slide .content-wrap {
+  width: 790px;
+  height: 650px;
+
+  text-align: center;
+  align-items: center;
+}
+.swiper-slide .content-wrap h3 {
+  font-size: 48px;
+}
+.swiper-slide .content-wrap h4 {
+  font-size: 40px;
+}
+.swiper-slide .content-wrap p {
+  font-size: 26px;
+}
+.swiper-slide .content-wrap em {
+  font-size: 30px;
+}
+.swiper-slide .content-wrap .works-sticker {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+.swiper-slide .content-wrap .works-sticker li {
+  width: 110px;
+  height: 110px;
+  padding: 37px 20px;
+  background: url(../img/ico-sticker.png) no-repeat 50% / contain;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* .swiper-slide .picwrap:nth-of-type(1) figure {
+  width: 562px;
+  height: 449px;
+} */
+.pic-wrap figure {
+  width: 655px;
+  height: 432px;
+}
+.pic-wrap figure img {
+  /* width: 100% */
+  object-fit: cover;
+  height: 100%;
+}
+/* .pic-wrap .sigong {
+  width: 655px;
+  height: 432px;
+  background: url(../img/sigong-pic.png) no-repeat 50% / contain;
+} */
+.swiper-slide .content-wrap .tools-icon {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.swiper-slide .content-wrap .tools-icon li figure {
+  width: 50px;
+  height: 50px;
+  /* background-image: no-repeat 50% / contain; */
+}
+.content-wrap .tools-icon li figure img {
+  object-fit: cover;
+  /* width: 100%; */
+  height: 100%;
 }
 
 main > section.section4 {
-  background: blue;
   background: url(/img/bg.png) no-repeat 50% / cover;
 }
 
+.section4 h2 {
+  display: block;
+  width: 360px;
+  height: 88px;
+  top: 60px;
+  left: 100px;
+  position: absolute;
+  background: url(../img/experience-title.png) no-repeat 0 0 / contain;
+}
+/* .section4 .card-wrap {
+  position: relative;
+}
+.section4 .card-wrap .card {
+  width: 1697px;
+  height: 730px;
+  background: #ff0;
+  position: absolute;
+  top: 125px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section4 .card-wrap .card li {
+  width: 379px;
+  height: 614px;
+}
+.section4 .card-wrap .card li:nth-child(1) {
+  background: url(../img/experience-tag1.png) no-repeat 50% / cover;
+}
+.section4 .card-wrap .card li:nth-child(2) {
+  background: url(../img/experience-tag2.png) no-repeat 50% / cover;
+}
+.section4 .card-wrap .card li:nth-child(3) {
+  background: url(../img/experience-tag3.png) no-repeat 50% / cover;
+} */
+
+.card-wrap {
+  display: flex;
+  border: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* perspective: 600px; */
+}
+.card {
+  width: 379px;
+  height: 614px;
+  perspective: 1100px;
+  /* position: relative; */
+  margin: 10px;
+  transition: transform 0.2s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* .front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+} */
+.front {
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: url(../img/front.png) no-repeat 50% / contain;
+  position: relative;
+}
+
+.front .info {
+  position: absolute;
+  width: 290px;
+  height: 450px;
+  opacity: 0;
+  transition: 0.4s;
+  background: #00f;
+  border-radius: 26px;
+  top: -99.5px;
+  transform: translateY(50%);
+  left: 45px;
+}
+
+@keyframes spin {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(1080deg);
+  }
+}
+
+.card.spin {
+  animation: spin 0.8s ease-in-out;
+}
+
+.card.flipped .front .info {
+  opacity: 1;
+}
+
+main > section.section5 {
+  background: url(/img/bg.png) no-repeat 50% / cover;
+}
+
+.section5 h2 {
+  display: block;
+  width: 360px;
+  height: 88px;
+  top: 60px;
+  left: 100px;
+  position: absolute;
+  background: url(../img/contactme-title.png) no-repeat 0 0 / contain;
+}
 #footer {
   height: 50px;
   line-height: 50px;

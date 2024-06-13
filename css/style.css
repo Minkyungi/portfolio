@@ -27,10 +27,6 @@ body {
   display: none;
 }
 
-.inner {
-  width: 80%;
-  margin: 0 auto;
-}
 /* main */
 main > section {
   height: 100vh;
@@ -176,7 +172,9 @@ main > section.section1 p::before {
 /* About Me */
 main > section.section2 {
   background: url(/img/bg.png) no-repeat 50% / cover;
+  width: 100%;
 }
+
 .section2 h2 {
   display: block;
   width: 360px;
@@ -186,13 +184,13 @@ main > section.section2 {
   position: absolute;
   background: url(../img/aboutme-title.png) no-repeat 0 0 / contain;
 }
-.pic-wrap {
+.section2 .pic-wrap {
   position: relative;
 }
-.pic-wrap li {
+.section2 .pic-wrap li {
   position: absolute;
 }
-.pic-wrap li:nth-child(1) {
+.section2 .pic-wrap li:nth-child(1) {
   width: 265px;
   height: 445px;
   background: url(../img/aboutme-pic.png) no-repeat 50% / contain;
@@ -200,7 +198,7 @@ main > section.section2 {
   left: 260px;
   z-index: 4;
 }
-.pic-wrap li:nth-child(2) {
+.section2 .pic-wrap li:nth-child(2) {
   width: 550px;
   height: 564px;
   background: url(../img/aboutme-pic2.png) no-repeat 50% / contain;
@@ -208,7 +206,7 @@ main > section.section2 {
   left: 90px;
   z-index: 3;
 }
-.pic-wrap li:nth-child(3) {
+.section2 .pic-wrap li:nth-child(3) {
   width: 672px;
   height: 713px;
   background: url(../img/aboutme-pic3.png) no-repeat 50% / contain;
@@ -216,7 +214,7 @@ main > section.section2 {
   left: 37px;
   z-index: 2;
 }
-.pic-wrap li:nth-child(4) {
+.section2 .pic-wrap li:nth-child(4) {
   width: 574px;
   height: 550px;
   background: url(../img/aboutme-pic4.png) no-repeat 50% / contain;
@@ -224,7 +222,7 @@ main > section.section2 {
   left: 51px;
   z-index: 1;
 }
-.pic-wrap li:nth-child(5) {
+.section2 .pic-wrap li:nth-child(5) {
   width: 651px;
   height: 513px;
   background: url(../img/aboutme-pic5.png) no-repeat 50% / contain;
@@ -258,11 +256,29 @@ main > section.section2 {
 .swiper-slide .content h3 {
   font-size: 36px;
 }
-.swiper-slide .content p {
+.swiper-slide .content-detail {
   font-size: 24px;
   margin-top: 47px;
   line-height: 1.2;
 }
+.brightness {
+  display: inline-block;
+}
+.brightness b.active {
+  transition: 0.4s;
+  animation: tagAni 1s both;
+}
+@keyframes tagAni {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  100% {
+    width: 100%;
+    background: #f00;
+  }
+}
+
 .swiper-slide .content-tag {
   width: 100%;
   display: flex;
@@ -270,6 +286,7 @@ main > section.section2 {
   text-align: center;
   margin-top: 15px;
 }
+
 .swiper-slide .content-tag li {
   width: 122px;
   height: 48px;
@@ -303,7 +320,7 @@ main > section.section3 {
   background: url(../img/works-title.png) no-repeat 0 0 / contain;
 }
 .works-slider-wrap {
-  width: 1697px;
+  width: 88.3854%;
   height: 730px;
   background: #ff0;
   position: absolute;
@@ -320,29 +337,95 @@ main > section.section3 {
   display: flex;
   justify-content: space-between;
 }
-.swiper-slide .content-wrap {
-  width: 790px;
-  height: 650px;
 
+.swiper-slide .pic-wrap {
+  width: 60%;
+  height: 100%;
+}
+/* .swiper-slide .pic-wrap figure  {
+
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+} */
+.swiper-slide .pic-wrap::before {
+  content: '';
+  display: block;
+  width: 716px;
+  height: 597px;
+  background: #fff;
+  position: absolute;
+  top: 35px;
+  left: 21px;
+  z-index: -1;
+}
+/* .swiper-slide .pic-wrap figure img {
+  object-fit: cover;
+  height: 100%;
+} */
+
+.swiper-slide .melody-mangrove {
+  width: 655px;
+  height: 432px;
+  margin: 0 auto;
+  background: url(../img/melodymangrove-pic.png) no-repeat 50% / cover;
+}
+.swiper-slide .aquarium {
+  width: 655px;
+  height: 432px;
+  background: url(../img/aquarium-pic.png) no-repeat 50% / contain;
+}
+.swiper-slide .coco {
+  width: 655px;
+  height: 432px;
+  background: url(../img/coco-pic.png) no-repeat 50% / contain;
+}
+.swiper-slide .sigong {
+  width: 655px;
+  height: 432px;
+  background: url(../img/sigong-pic.png) no-repeat 50% / contain;
+}
+
+.swiper-slide .content-wrap {
+  /* width: 790px;
+  height: 650px; */
+  width: 40%;
+  height: 100%;
   text-align: center;
   align-items: center;
 }
+.swiper-slide .content-wrap .project {
+  width: 194px;
+  height: 52px;
+  margin: 0 auto;
+  background: url(../img/project.png) no-repeat 50% / contain;
+}
 .swiper-slide .content-wrap h3 {
   font-size: 48px;
+  margin-top: 25px;
 }
 .swiper-slide .content-wrap h4 {
   font-size: 40px;
+  margin-top: 10px;
 }
 .swiper-slide .content-wrap p {
   font-size: 26px;
+  margin-top: 25px;
 }
 .swiper-slide .content-wrap em {
+  display: block;
+  font-size: 30px;
+  margin-top: 46px;
+}
+.swiper-slide .content-wrap b {
   font-size: 30px;
 }
 .swiper-slide .content-wrap .works-sticker {
   display: flex;
   justify-content: center;
   gap: 90px;
+  margin-top: 16px;
 }
 .swiper-slide .content-wrap .works-sticker li {
   width: 110px;
@@ -352,28 +435,12 @@ main > section.section3 {
   font-size: 30px;
   cursor: pointer;
 }
-/* .swiper-slide .picwrap:nth-of-type(1) figure {
-  width: 562px;
-  height: 449px;
-} */
-.pic-wrap figure {
-  width: 655px;
-  height: 432px;
-}
-.pic-wrap figure img {
-  /* width: 100% */
-  object-fit: cover;
-  height: 100%;
-}
-/* .pic-wrap .sigong {
-  width: 655px;
-  height: 432px;
-  background: url(../img/sigong-pic.png) no-repeat 50% / contain;
-} */
+
 .swiper-slide .content-wrap .tools-icon {
   display: flex;
   justify-content: center;
   gap: 40px;
+  margin-top: 36px;
 }
 .swiper-slide .content-wrap .tools-icon li figure {
   width: 50px;
@@ -399,37 +466,12 @@ main > section.section4 {
   position: absolute;
   background: url(../img/experience-title.png) no-repeat 0 0 / contain;
 }
-/* .section4 .card-wrap {
-  position: relative;
-}
-.section4 .card-wrap .card {
-  width: 1697px;
-  height: 730px;
-  background: #ff0;
-  position: absolute;
-  top: 125px;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section4 .card-wrap .card li {
-  width: 379px;
-  height: 614px;
-}
-.section4 .card-wrap .card li:nth-child(1) {
-  background: url(../img/experience-tag1.png) no-repeat 50% / cover;
-}
-.section4 .card-wrap .card li:nth-child(2) {
-  background: url(../img/experience-tag2.png) no-repeat 50% / cover;
-}
-.section4 .card-wrap .card li:nth-child(3) {
-  background: url(../img/experience-tag3.png) no-repeat 50% / cover;
-} */
 
 .card-wrap {
+  width: 88.3854%;
   display: flex;
-  border: 1px solid #000;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -445,37 +487,94 @@ main > section.section4 {
   transition: transform 0.2s ease-in-out;
   transform-style: preserve-3d;
 }
-
-/* .front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-} */
-.front {
+.card1,
+.card2,
+.card3 {
   /* position: absolute; */
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
 
-.front {
-  background: url(../img/front.png) no-repeat 50% / contain;
+.card1 {
+  background: url(../img/harang-front.png) no-repeat 50% / contain;
+  position: relative;
+}
+.card2 {
+  background: url(../img/ongi-front.png) no-repeat 50% / contain;
+  position: relative;
+}
+.card3 {
+  background: url(../img/sfc-front.png) no-repeat 50% / contain;
   position: relative;
 }
 
-.front .info {
+.card1 .card1-info {
   position: absolute;
   width: 290px;
   height: 450px;
   opacity: 0;
   transition: 0.4s;
-  background: #00f;
+  background: #1d3151;
   border-radius: 26px;
   top: -99.5px;
   transform: translateY(50%);
   left: 45px;
+  padding: 50px 30px;
+}
+.card2 .card2-info {
+  position: absolute;
+  width: 290px;
+  height: 450px;
+  opacity: 0;
+  transition: 0.4s;
+  background: #851c50;
+  border-radius: 26px;
+  top: -99.5px;
+  transform: translateY(50%);
+  left: 45px;
+  padding: 50px 30px;
+}
+.card3 .card3-info {
+  position: absolute;
+  width: 290px;
+  height: 450px;
+  opacity: 0;
+  transition: 0.4s;
+  background: #244917;
+  border-radius: 26px;
+  top: -99.5px;
+  transform: translateY(50%);
+  left: 45px;
+  padding: 50px 30px;
+}
+.card1 .card1-info h3 {
+  width: 169px;
+  height: 40px;
+  margin: 0 auto;
+  background: url(../img/harang-title.png) 50% / contain;
+}
+.card2 .card2-info h3 {
+  width: 120px;
+  height: 36px;
+  margin: 0 auto;
+  background: url(../img/ongi-title.png) 50% / contain;
+}
+.card3 .card3-info h3 {
+  width: 132px;
+  height: 36px;
+  margin: 0 auto;
+  background: url(../img/sfc-title.png) 50% / contain;
+}
+.card1 .card1-info p,
+.card2 .card2-info p,
+.card3 .card3-info p {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.2;
+  word-break: keep-all;
 }
 
 @keyframes spin {
@@ -491,7 +590,9 @@ main > section.section4 {
   animation: spin 0.8s ease-in-out;
 }
 
-.card.flipped .front .info {
+.card.flipped .card1-info,
+.card.flipped .card2-info,
+.card.flipped .card3-info {
   opacity: 1;
 }
 
@@ -508,6 +609,96 @@ main > section.section5 {
   position: absolute;
   background: url(../img/contactme-title.png) no-repeat 0 0 / contain;
 }
+
+.contact-me-wrap {
+  width: 88.3854%;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+.contact-me-wrap::before {
+  content: '';
+  display: block;
+  width: 446px;
+  height: 400px;
+  position: absolute;
+  top: 540px;
+  left: -270px;
+
+  background: url(../img/blur-blue.png) no-repeat 50% / contain;
+}
+.contact-me-wrap::after {
+  content: '';
+  display: block;
+  width: 666px;
+  height: 666px;
+  position: absolute;
+  top: -180px;
+  left: 420px;
+
+  background: url(../img/blur-pink.png) no-repeat 50% / contain;
+}
+.contact-me-wrap .content-wrap {
+  width: 40%;
+  /* background: #ff0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-me-wrap .content-wrap p {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+.contact-me-wrap .pic-wrap {
+  width: 50%;
+  /* background: #f00; */
+}
+.contact-me-wrap .pic-wrap li {
+  position: relative;
+}
+.contact-me-wrap .pic-wrap li:nth-child(1) {
+  width: 158px;
+  height: 109px;
+  background: url(../img/contactme-tape.png) no-repeat 50% / contain;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  right: 350px;
+}
+.contact-me-wrap .pic-wrap li:nth-child(2) {
+  width: 758px;
+  height: 589px;
+  background: url(../img/contactme-pic1.png) no-repeat 50% / contain;
+  z-index: 3;
+  position: absolute;
+  top: 55px;
+  right: 45px;
+}
+.contact-me-wrap .pic-wrap li:nth-child(3) {
+  width: 777px;
+  height: 759px;
+  background: url(../img/contactme-pic2.png) no-repeat 50% / contain;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.contact-me-wrap .pic-wrap li:nth-child(4) {
+  width: 838px;
+  height: 696px;
+  background: url(../img/contactme-pic3.png) no-repeat 50% / contain;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
 #footer {
   height: 50px;
   line-height: 50px;

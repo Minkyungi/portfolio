@@ -99,6 +99,15 @@ $(function () {
       prevEl: '.swiper-button-prev',
     },
   });
+  /* about me hover */
+  $('.brightness-tag').hover(
+    function () {
+      $('.brightness b').addClass('active');
+    },
+    function () {
+      $('.brightness b').removeClass('active');
+    }
+  );
 
   // works slider
   const worksSlider = new Swiper('.works-slider', {

@@ -64,6 +64,7 @@ main > section.section1 h1 .brilliant::before {
   height: 89px;
   background: url(../img/main-star1.png) no-repeat 50% / contain;
   position: absolute;
+  animation: sparkle2 0.5s 0.3s infinite steps(2); /* 애니메이션 적용 */
 }
 main > section.section1 h1 .brilliant::after {
   content: '';
@@ -73,6 +74,23 @@ main > section.section1 h1 .brilliant::after {
   height: 81px;
   background: url(../img/main-star2.png) no-repeat 50% / contain;
   position: absolute;
+  animation: sparkle2 0.5s infinite steps(2); /* 애니메이션 적용 */
+}
+@keyframes sparkle {
+  0%,
+  100% {
+    scale: 0.5;
+    opacity: 1;
+  }
+  50% {
+    scale: 1;
+    opacity: 0.3;
+  }
+}
+@keyframes sparkle2 {
+  to {
+    transform: rotate(30deg);
+  }
 }
 main > section.section1 h1 .records {
   width: 100%;
@@ -132,7 +150,7 @@ main > section.section1 p::before {
   cursor: pointer;
 }
 
-.blur-wrap li:nth-of-type(1) {
+.section1 .blur-wrap li:nth-of-type(1) {
   background: url(../img/blur-blue.png) no-repeat 50% / contain;
   width: 466px;
   height: 308px;
@@ -141,7 +159,7 @@ main > section.section1 p::before {
   left: 442px;
   z-index: 1;
 }
-.blur-wrap li:nth-child(2) {
+.section1 .blur-wrap li:nth-child(2) {
   background: url(../img/blur-pink.png) no-repeat 50% / contain;
   width: 500px;
   height: 408px;
@@ -150,7 +168,7 @@ main > section.section1 p::before {
   right: 100px;
   z-index: 1;
 }
-.blur-wrap li:nth-child(3) {
+.section1 .blur-wrap li:nth-child(3) {
   background: url(../img/blur-yellow.png) no-repeat 50% / contain;
   width: 316px;
   height: 416px;
@@ -159,16 +177,7 @@ main > section.section1 p::before {
   left: -59px;
   z-index: 1;
 }
-.blur-wrap li:nth-child(4) {
-  background: url(../img/blur-blue.png) no-repeat 50% / contain;
-  width: 628px;
-  height: 437px;
-  position: absolute;
-  top: 598px;
-  right: -211px;
-  z-index: 1;
-  overflow-y: hidden;
-}
+
 /* About Me */
 main > section.section2 {
   background: url(/img/bg.png) no-repeat 50% / cover;
@@ -183,6 +192,31 @@ main > section.section2 {
   left: 100px;
   position: absolute;
   background: url(../img/aboutme-title.png) no-repeat 0 0 / contain;
+}
+
+.section2 .blur-wrap .blur li:nth-child(1) {
+  position: absolute;
+  left: -150px;
+  top: 710px;
+  width: 332px;
+  height: 332px;
+  background: url(../img/blur-pink.png) no-repeat 50% / contain;
+}
+.section2 .blur-wrap .blur li:nth-child(2) {
+  position: absolute;
+  left: 750px;
+  top: 50px;
+  width: 370px;
+  height: 365px;
+  background: url(../img/blur-yellow.png) no-repeat 50% / contain;
+}
+.section2 .blur-wrap .blur li:nth-child(3) {
+  position: absolute;
+  left: 1570px;
+  top: 650px;
+  width: 362px;
+  height: 324px;
+  background: url(../img/blur-blue.png) no-repeat 50% / contain;
 }
 .section2 .pic-wrap {
   position: relative;
@@ -237,7 +271,7 @@ main > section.section2 {
   position: absolute;
   top: 230px;
   right: 200px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .introduce-slider .swiper-slide {
   width: 100%;
@@ -261,21 +295,107 @@ main > section.section2 {
   margin-top: 47px;
   line-height: 1.2;
 }
-.brightness {
+.brightness,
+.brightness > b,
+.record,
+.record > b,
+.sincerity,
+.sincerity > b,
+.consideration,
+.consideration > b {
   display: inline-block;
+  position: relative;
 }
-.brightness b.active {
+.brightness b::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 50%;
+  z-index: -1;
+}
+.brightness b.active::before {
   transition: 0.4s;
-  animation: tagAni 1s both;
+  animation: tagAni1 1s both;
 }
-@keyframes tagAni {
+.record b::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 50%;
+  z-index: -1;
+}
+.record b.active::before {
+  transition: 0.4s;
+  animation: tagAni2 1s both;
+}
+.sincerity b::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 50%;
+  z-index: -1;
+}
+.sincerity b.active::before {
+  transition: 0.4s;
+  animation: tagAni3 1s both;
+}
+.consideration b::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 50%;
+  z-index: -1;
+}
+.consideration b.active::before {
+  transition: 0.4s;
+  animation: tagAni4 1s both;
+}
+@keyframes tagAni1 {
   0% {
     width: 0;
     background: transparent;
   }
   100% {
     width: 100%;
-    background: #f00;
+    background: #f8c215;
+  }
+}
+@keyframes tagAni2 {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  100% {
+    width: 100%;
+    background: #a4e5ad;
+  }
+}
+@keyframes tagAni3 {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  100% {
+    width: 100%;
+    background: #8bd0e2;
+  }
+}
+@keyframes tagAni4 {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  100% {
+    width: 100%;
+    background: #d1aeeb;
   }
 }
 
@@ -293,6 +413,10 @@ main > section.section2 {
   font-size: 27px;
   padding: 10px;
 }
+.swiper-slide .information p {
+  font-size: 30px;
+  padding: 5px;
+}
 .swiper-slide .content-tag li:nth-child(1) {
   background: url(../img/aboutme-tape1.png) no-repeat 50% / contain;
 }
@@ -308,7 +432,165 @@ main > section.section2 {
 main > section.section3 {
   background: url(/img/bg.png) no-repeat 50% / cover;
 }
+.skill-wrap {
+  width: 100%;
+  height: 100%;
+  /* background: #f0f; */
+}
+.skill-wrap .skill {
+  margin-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
+  row-gap: 20px;
+}
+.skill-wrap .skill {
+  position: relative;
+}
+.skill-wrap .skill li {
+  /* border: 1px solid #000; */
+  width: 111px;
+  height: 110px;
+  flex-basis: 25%;
+  background: url(../img/ico-sticker.png) no-repeat 50% / contain;
+  position: relative;
+}
+.skill-wrap .skill li:nth-child(odd) {
+  margin-top: -50px;
+}
+.skill-wrap .skill li:nth-child(1)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-figma.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(2)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-illu.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(3)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-photoshop.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(4)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-html.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(5)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-css.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(6)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-js.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(7)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-jquery.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(8)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-android.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(9)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-react.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(10)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-c.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(11)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-python.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
+.skill-wrap .skill li:nth-child(12)::before {
+  content: '';
+  top: 5px;
+  left: 18%;
+  width: 50px;
+  height: 50px;
+  background: url(../img/ico-java.png) no-repeat 50% / contain;
+  transform: translate(50%, 50%);
+  position: absolute;
+  z-index: 1;
+}
 /* works */
 .section3 h2 {
   display: block;
@@ -322,7 +604,7 @@ main > section.section3 {
 .works-slider-wrap {
   width: 88.3854%;
   height: 730px;
-  background: #ff0;
+  /* background: #ff0; */
   position: absolute;
   top: 185px;
   /* right: 200px; */
@@ -339,58 +621,137 @@ main > section.section3 {
 }
 
 .swiper-slide .pic-wrap {
-  width: 60%;
+  width: 50%;
   height: 100%;
 }
-/* .swiper-slide .pic-wrap figure  {
 
-  position: absolute;
-  top: 0px;
-  left: 0;
-  z-index: 1;
-} */
 .swiper-slide .pic-wrap::before {
   content: '';
   display: block;
   width: 716px;
   height: 597px;
   background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: absolute;
-  top: 35px;
-  left: 21px;
+  top: 20px;
+  left: 93px;
   z-index: -1;
 }
-/* .swiper-slide .pic-wrap figure img {
-  object-fit: cover;
-  height: 100%;
-} */
 
+/* melody-mangrove */
+
+.section3 {
+  position: relative;
+}
+.melody-mangrove-blur-wrap ul li:nth-child(1) {
+  width: 446px;
+  height: 400px;
+  position: absolute;
+  top: 540px;
+  left: -270px;
+
+  background: url(../img/blur-red.png) no-repeat 50% / contain;
+  z-index: 1;
+}
+.melody-mangrove-blur-wrap ul li:nth-child(2) {
+  width: 446px;
+  height: 400px;
+  position: absolute;
+  top: 540px;
+  left: -270px;
+
+  background: url(../img/blur-red.png) no-repeat 50% / contain;
+  z-index: 1;
+}
+.melody-mangrove-blur-wrap ul li:nth-child(3) {
+  width: 446px;
+  height: 400px;
+  position: absolute;
+  top: 540px;
+  left: -270px;
+
+  background: url(../img/blur-red.png) no-repeat 50% / contain;
+  z-index: 1;
+}
+.melody-mangrove-blur-wrap ul li:nth-child(4) {
+  width: 446px;
+  height: 400px;
+  position: absolute;
+  top: 540px;
+  left: -270px;
+
+  background: url(../img/blur-red.png) no-repeat 50% / contain;
+  z-index: 1;
+}
 .swiper-slide .melody-mangrove {
   width: 655px;
   height: 432px;
   margin: 0 auto;
   background: url(../img/melodymangrove-pic.png) no-repeat 50% / cover;
+  position: relative;
+}
+.swiper-slide .melody-mangrove::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -70px;
+  width: 143px;
+  height: 141px;
+  background: url(../img/melodymangrove-tape.png) no-repeat 50% / contain;
+  z-index: 1;
 }
 .swiper-slide .aquarium {
   width: 655px;
   height: 432px;
+  margin: 0 auto;
   background: url(../img/aquarium-pic.png) no-repeat 50% / contain;
+}
+.swiper-slide .aquarium::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 700px;
+  width: 143px;
+  height: 141px;
+  background: url(../img/aquarium-tape.png) no-repeat 50% / contain;
+  z-index: 1;
 }
 .swiper-slide .coco {
   width: 655px;
   height: 432px;
+  margin: 0 auto;
   background: url(../img/coco-pic.png) no-repeat 50% / contain;
+}
+.swiper-slide .coco::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 700px;
+  width: 143px;
+  height: 141px;
+  background: url(../img/coco-tape.png) no-repeat 50% / contain;
+  z-index: 1;
 }
 .swiper-slide .sigong {
   width: 655px;
   height: 432px;
-  background: url(../img/sigong-pic.png) no-repeat 50% / contain;
+  margin: 0 auto;
+  background: url(../img/sigong-pic.png) no-repeat 0% / cover;
 }
-
+.swiper-slide .sigong::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 143px;
+  height: 141px;
+  background: url(../img/sigong-tape.png) no-repeat 50% / contain;
+  z-index: 1;
+}
 .swiper-slide .content-wrap {
   /* width: 790px;
   height: 650px; */
-  width: 40%;
+  width: 50%;
   height: 100%;
   text-align: center;
   align-items: center;
@@ -452,7 +813,69 @@ main > section.section3 {
   /* width: 100%; */
   height: 100%;
 }
+/* 배너 */
+.swiper-slide:nth-child(6) {
+  padding: 50px 50px;
+}
 
+.swiper-slide .graphics-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide .graphics-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+  column-gap: 20px; /* 추가: 열 사이의 간격 */
+  align-items: center;
+}
+
+.swiper-slide .graphics-wrap li {
+  width: calc(25% - 20px); /* 열 간격을 고려한 너비 조정 */
+  height: 293px;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  flex: 1 1 calc(25% - 20px);
+  margin: 0;
+  position: relative;
+}
+.swiper-slide .graphics-wrap li p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swiper-slide .graphics-wrap li:nth-child(1)::before {
+  content: '';
+  top: 31px;
+  left: 31px;
+  width: 320px;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  background: #000;
+  z-index: 1;
+}
+
+.swiper-slide .graphics-wrap li:nth-child(2)::before {
+}
+.swiper-slide .graphics-wrap li:nth-child(3)::before {
+}
+.swiper-slide .graphics-wrap li:nth-child(4)::before {
+  background: transparent;
+  width: 272px;
+  height: 92px;
+  box-shadow: none;
+  background: url(../img/works-title.png) no-repeat 50% / contain;
+}
+.swiper-slide .graphics-wrap li:nth-child(5) {
+}
+.swiper-slide .graphics-wrap li:nth-child(6) {
+}
+.swiper-slide .graphics-wrap li:nth-child(7) {
+}
 main > section.section4 {
   background: url(/img/bg.png) no-repeat 50% / cover;
 }
@@ -624,7 +1047,6 @@ main > section.section5 {
 }
 .contact-me-wrap::before {
   content: '';
-  display: block;
   width: 446px;
   height: 400px;
   position: absolute;

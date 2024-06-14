@@ -108,6 +108,30 @@ $(function () {
       $('.brightness b').removeClass('active');
     }
   );
+  $('.record-tag').hover(
+    function () {
+      $('.record b').addClass('active');
+    },
+    function () {
+      $('.record b').removeClass('active');
+    }
+  );
+  $('.sincerity-tag').hover(
+    function () {
+      $('.sincerity b').addClass('active');
+    },
+    function () {
+      $('.sincerity b').removeClass('active');
+    }
+  );
+  $('.consideration-tag').hover(
+    function () {
+      $('.consideration b').addClass('active');
+    },
+    function () {
+      $('.consideration b').removeClass('active');
+    }
+  );
 
   // works slider
   const worksSlider = new Swiper('.works-slider', {

@@ -4,6 +4,7 @@ $(function () {
   const $sideDot = $('.indicator button');
   const $section = $('#container > section');
   const $btnTop = $('.btn-top');
+  const $aniEl = $('[data-aos]');
 
   // top버튼 숨기고 시작
   $btnTop.hide();
@@ -20,9 +21,6 @@ $(function () {
     moveSection(secIdx);
   });
 
-  // 섹션의 위치값 구하기
-  console.log($section.eq(1).offset().top);
-
   // 섹션을 이동하는 동작을 함수로 정의
   function moveSection(index) {
     // 인덱스를 활용해서 섹션의 위치값 구하기
@@ -34,8 +32,11 @@ $(function () {
       300
     );
     updateDot(index);
-    console.log(secIdx);
-
+    // console.log(secIdx);
+    $aniEl.removeClass('aos-animate');
+    AOS.init();
+    $aniEl.eq(index).addClass('aos-animate');
+    console.log($aniEl);
     // Top버튼 보이게/숨기게
     if (secIdx >= 2) {
       $btnTop.fadeIn();
@@ -80,6 +81,109 @@ $(function () {
     moveSection(secIdx);
   });
 
+  const bodyEl = document.querySelector('body');
+  const focusEl = document.querySelector('#focus');
+
+  // first load
+  window.onload = () => {
+    resetFocus();
+  };
+
+  // screen resized
+  window.addEventListener(
+    'resize',
+    (resizeScreen = () => {
+      resetFocus();
+    })
+  );
+
+  // cursor
+  const $cursor = $('.cursor');
+  const $spark = $('.spark');
+
+  // 브라우저 창에서 마우스가 움직일 때
+  $window.on('mousemove', function (e) {
+    console.log(e);
+
+    // 마우스의 x,y 좌표값을 받아서
+    const mouseX = e.pageX;
+    const mouseY = e.pageY;
+
+    // 가짜 마우스의 left, top 값으로 적용
+    $cursor.add($spark).css({
+      left: mouseX,
+      top: mouseY,
+    });
+  });
+  // event : mousedown, mouseup --> 마우스를 클릭
+  $window.on('mousedown', function () {
+    $cursor.addClass('click');
+  });
+  // 떼면 click 삭제
+  $window.on('mouseup', function () {
+    $cursor.removeClass('click');
+  });
+  // 화면을 클릭하면 spark에 active 클래스 부여
+  $window.on('click', function () {
+    $spark.addClass('active');
+    setTimeout(function () {
+      $spark.removeClass('active');
+    }, 1000);
+  });
+
+  // main blur
+  const $blur1 = $('.blur1');
+  const $blur2 = $('.blur2');
+  const $blur3 = $('.blur3');
+
+  let x = 0;
+  let y = 0;
+  let mx = 0;
+  let my = 0;
+  const speed = 0.009;
+
+  let raf;
+
+  initAnimation();
+
+  function initAnimation() {
+    getOffset();
+    moving();
+  }
+  function getOffset() {
+    $window.on('mousemove', function (e) {
+      x = e.pageX;
+      y = e.pageY;
+
+      // 조정된 값 구하기
+      mx = ($window.outerWidth() / 2 - x) * speed;
+      my = ($window.outerHeight() / 2 - y) * speed;
+    });
+  }
+  function moving() {
+    // 대상에 값 적용
+    setTimeout(() => {
+      $blur1.css({
+        transform: `translate(${mx * 5}px,${my * 3}px)`,
+      });
+    }, 100); // 100ms 딜레이
+
+    setTimeout(() => {
+      $blur2.css({
+        transform: `translate(${mx * 7}px,${my * 7}px)`,
+      });
+    }, 400); // 200ms 딜레이
+
+    setTimeout(() => {
+      $blur3.css({
+        transform: `translate(${mx * 10}px,${my * 7}px)`,
+      });
+    }, 700); // 300ms 딜레이
+
+    // 부드럽게 반복
+    raf = requestAnimationFrame(moving);
+  }
+
   // about me slider
   const introduceSlider = new Swiper('.introduce-slider', {
     autoplay: {
@@ -99,6 +203,7 @@ $(function () {
       prevEl: '.swiper-button-prev',
     },
   });
+
   /* about me hover */
   $('.brightness-tag').hover(
     function () {
@@ -163,4 +268,17 @@ $(function () {
       $this.removeClass('spin').toggleClass('flipped');
     }, 800); // 애니메이션 시간과 맞춤
   });
+
+  const amount = 20;
+  const sineDots = Math.floor(amount * 0.3);
+  const width = 26;
+  const idleTimeout = 150;
+  let lastFrame = 0;
+  let mousePosition = { x: 0, y: 0 };
+  let dots = [];
+  let timeoutID;
+  let idle = false;
+  Sticker.init('.sticker');
+
+  // section 애니메이션
 });

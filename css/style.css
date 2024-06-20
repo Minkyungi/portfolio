@@ -33,6 +33,41 @@ a:hover,
 body {
   /* cursor: none; */
 }
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: url(../img/bg.png);
+}
+#loading .wrap {
+  margin: 0 auto;
+  position: relative;
+}
+#loading video {
+  max-width: 100%;
+  max-height: 100%;
+}
+#loading .wrap button {
+  z-index: 201;
+  border: none;
+  width: 122px;
+  height: 48px;
+  background: url(../img/aboutme-tape3.png) no-repeat 50% / contain;
+  transition: 0.3s;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+#loading button p {
+  font-size: 30px;
+}
+/* 페이지 콘텐츠 숨김 스타일 */
+.indicator,
+#container {
+  display: none;
+}
 .cursor {
   position: absolute;
   top: 0;
@@ -576,8 +611,8 @@ main > section.section2 {
   padding: 10px;
 }
 .swiper-slide .information .information-title {
-  width: 194px;
-  height: 52px;
+  width: 234px;
+  height: 80px;
   margin: 0 auto;
   background: url(../img/information-title.png) no-repeat 50% / contain;
 }
@@ -616,22 +651,24 @@ main > section.section3 {
   transform: rotate(5deg);
 }
 .skill-wrap .skill {
-  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 20px;
-  /* position: relative; */
+  justify-content: center;
+  gap: 20px;
+  max-width: 510px;
+  margin: 0 auto;
+  margin-top: 66px;
 }
 
 .skill-wrap .skill .sticker {
   width: 110px !important;
   height: 110px !important;
-  flex-basis: 25%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 110px; /* flex-basis를 고정 크기로 설정 */
+  max-width: 110px;
   position: relative;
   margin-top: 20px;
-  background: #f0f;
-  border: 1px solid #000;
 }
 .skill-wrap .skill .sticker > * {
   width: 100% !important;
@@ -640,7 +677,7 @@ main > section.section3 {
 }
 
 .skill .sticker .sticker-img {
-  background: #cccccd;
+  background: #d9d6d8;
 }
 
 .skill .sticker .sticker-shadow {
@@ -653,7 +690,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(1)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-figma.png) no-repeat 50% / contain;
@@ -664,7 +701,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(2)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-illu.png) no-repeat 50% / contain;
@@ -675,7 +712,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(3)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-photoshop.png) no-repeat 50% / contain;
@@ -686,7 +723,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(4)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-html.png) no-repeat 50% / contain;
@@ -697,7 +734,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(5)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-css.png) no-repeat 50% / contain;
@@ -708,7 +745,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(6)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-js.png) no-repeat 50% / contain;
@@ -719,7 +756,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(7)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-jquery.png) no-repeat 50% / contain;
@@ -730,7 +767,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(8)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-android.png) no-repeat 50% / contain;
@@ -741,7 +778,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(9)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 5px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-react.png) no-repeat 50% / contain;
@@ -752,7 +789,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(10)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 5px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-c.png) no-repeat 50% / contain;
@@ -763,7 +800,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(11)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-python.png) no-repeat 50% / contain;
@@ -774,7 +811,7 @@ main > section.section3 {
 .skill-wrap .skill li:nth-child(12)::before {
   content: '';
   top: 5px;
-  left: 18%;
+  left: 7px;
   width: 50px;
   height: 50px;
   background: url(../img/ico-java.png) no-repeat 50% / contain;

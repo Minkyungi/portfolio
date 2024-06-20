@@ -1,10 +1,104 @@
 $(function () {
   // 대상을 변수에 저장
   const $window = $(window);
+  const $loadingScreen = $('#loading');
+  const $loadingVideo = $('#loadingVideo');
+  const $skipBtn = $('#loading button');
+  const $mainContent = $('#container');
+  const $indicator = $('.indicator');
+
   const $sideDot = $('.indicator button');
   const $section = $('#container > section');
   const $btnTop = $('.btn-top');
   const $aniEl = $('[data-aos]');
+
+  // 로딩
+  $loadingScreen.css('display', 'flex');
+  $mainContent.hide();
+  $indicator.hide();
+
+  // 비디오를 클릭하여 로딩 화면을 숨기고 메인 콘텐츠를 보여줍니다
+  $loadingVideo.on('click', function () {
+    // 비디오 재생 중지
+    this.pause();
+
+    // 로딩 화면 부드럽게 숨기고 메인 콘텐츠 보이기
+    $loadingScreen.fadeOut(400, function () {
+      $mainContent.fadeIn(400);
+      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
+      $(window).off('scroll.disableScroll');
+    });
+
+    // 비디오 클릭 시 스크롤 이벤트 일시적으로 비활성화
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  });
+  $skipBtn.on('click', function () {
+    // 비디오 재생 중지
+    this.pause();
+
+    // 로딩 화면 부드럽게 숨기고 메인 콘텐츠 보이기
+    $loadingScreen.fadeOut(400, function () {
+      $mainContent.fadeIn(400);
+      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
+      $(window).off('scroll.disableScroll');
+    });
+
+    // 비디오 클릭 시 스크롤 이벤트 일시적으로 비활성화
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  });
+  $loadingVideo.on('ended', function () {
+    $loadingScreen.fadeOut(700, function () {
+      // $mainContent.fadeIn(700);
+      $indicator.fadeIn(700);
+
+      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
+      $(window).off('scroll.disableScroll');
+    });
+
+    // 비디오 종료 시 스크롤 이벤트 일시적으로 비활성화
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+    // 로딩 화면에서 스크롤 이벤트 막기
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  });
+  $loadingVideo.on('ended', function () {
+    $loadingScreen.fadeOut(700, function () {
+      // $mainContent.fadeIn(700);
+      $indicator.fadeIn(700);
+
+      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
+      $(window).off('scroll.disableScroll');
+    });
+
+    // 비디오 종료 시 스크롤 이벤트 일시적으로 비활성화
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+    // 로딩 화면에서 스크롤 이벤트 막기
+    $(window).on('scroll.disableScroll', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  });
+  $mainContent.show();
 
   // top버튼 숨기고 시작
   $btnTop.hide();

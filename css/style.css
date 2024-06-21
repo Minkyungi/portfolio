@@ -122,7 +122,7 @@ main > section {
   position: relative;
 }
 main > section.section1 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
 }
 main > section.section1 h3 {
   display: block;

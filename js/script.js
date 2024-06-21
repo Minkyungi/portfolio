@@ -17,29 +17,7 @@ $(function () {
   $mainContent.hide();
   $indicator.hide();
 
-  // 비디오를 클릭하여 로딩 화면을 숨기고 메인 콘텐츠를 보여줍니다
-  $loadingVideo.on('click', function () {
-    // 비디오 재생 중지
-    this.pause();
-
-    // 로딩 화면 부드럽게 숨기고 메인 콘텐츠 보이기
-    $loadingScreen.fadeOut(400, function () {
-      $mainContent.fadeIn(400);
-      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
-      $(window).off('scroll.disableScroll');
-    });
-
-    // 비디오 클릭 시 스크롤 이벤트 일시적으로 비활성화
-    $(window).on('scroll.disableScroll', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    });
-  });
   $skipBtn.on('click', function () {
-    // 비디오 재생 중지
-    this.pause();
-
     // 로딩 화면 부드럽게 숨기고 메인 콘텐츠 보이기
     $loadingScreen.fadeOut(400, function () {
       $mainContent.fadeIn(400);
@@ -59,8 +37,7 @@ $(function () {
       // $mainContent.fadeIn(700);
       $indicator.fadeIn(700);
 
-      // 메인 콘텐츠가 표시될 때 스크롤 이벤트 활성화
-      $(window).off('scroll.disableScroll');
+      $('html, body').animate({ scrollTop: 0 }, 500);
     });
 
     // 비디오 종료 시 스크롤 이벤트 일시적으로 비활성화
@@ -98,6 +75,7 @@ $(function () {
       return false;
     });
   });
+  $indicator.show();
   $mainContent.show();
 
   // top버튼 숨기고 시작

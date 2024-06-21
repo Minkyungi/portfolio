@@ -130,12 +130,13 @@ body.lb-disable-scrolling {
   color: #ccc;
 }
 .lb-data .lb-details {
-  width: 85%;
+  /* width: 85%;
   float: left;
   text-align: left;
-  line-height: 1.1em;
+  line-height: 1.1em; */
+  display: none;
 }
-.lb-data .lb-caption {
+/* .lb-data .lb-caption {
   font-size: 13px;
   font-weight: 700;
   line-height: 1em;
@@ -143,14 +144,11 @@ body.lb-disable-scrolling {
 
 .lb-data .lb-caption a {
   color: #4ae;
-}
-.lb-data .lb-number {
-  display: block;
-  clear: left;
-  padding-bottom: 1em;
-  font-size: 20px;
-  color: #e6e6e6;
-}
+} */
+/* .lb-data .lb-number {
+
+  display: none;
+} */
 .lb-data .lb-close {
   display: block;
   float: right;

@@ -66,8 +66,10 @@ body {
 /* 페이지 콘텐츠 숨김 스타일 */
 .indicator,
 #container {
+  overflow-y: hidden;
   display: none;
 }
+
 .cursor {
   position: absolute;
   top: 0;
@@ -99,6 +101,7 @@ body {
   pointer-events: none;
   user-select: none;
   transition: 0.4s;
+  z-index: 100;
 }
 
 .spark.active {
@@ -1161,7 +1164,7 @@ main > section.section3 {
 .wrapper {
   width: 100%;
   text-align: center;
-  margin-top: -40px;
+  margin-top: -110px;
 }
 .polaroid {
   background: #fff;

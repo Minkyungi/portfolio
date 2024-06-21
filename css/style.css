@@ -355,7 +355,7 @@ main > section.section1 .intro-content .pencil {
 
 /* About Me */
 main > section.section2 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
   width: 100%;
 }
 
@@ -823,6 +823,9 @@ main > section.section3 {
   z-index: 1;
 }
 /* works */
+main > section.section3 {
+  background: url(/img/bg.png) no-repeat 50% / cover;
+}
 .section3 h2 {
   display: block;
   width: 360px;
@@ -1272,7 +1275,7 @@ main > section.section3 {
 }
 
 main > section.section4 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
 }
 
 .section4 h2 {
@@ -1421,7 +1424,7 @@ main > section.section4 {
 }
 
 main > section.section5 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
 }
 
 .section5 h2 {

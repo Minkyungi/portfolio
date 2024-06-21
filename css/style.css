@@ -124,6 +124,7 @@ main > section {
 main > section.section1 {
   background: url(../img/bg.png) no-repeat 50% / cover;
 }
+
 main > section.section1 h3 {
   display: block;
   width: 550px;
@@ -824,7 +825,7 @@ main > section.section3 {
 }
 /* works */
 main > section.section3 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
 }
 .section3 h2 {
   display: block;

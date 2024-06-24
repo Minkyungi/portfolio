@@ -47,6 +47,8 @@ body {
 #loading video {
   max-width: 100%;
   max-height: 100%;
+  /* background: transparent; */
+  transform: scale(1.25);
 }
 #loading .wrap button {
   z-index: 201;
@@ -192,9 +194,10 @@ main > section.section1 .intro-content p {
   font-size: 2.2rem;
   text-align: center;
   top: 100px;
+  left: 50%;
   position: relative;
   z-index: 1;
-  transform: translateX(60%);
+  transform: translateX(-50%);
 }
 main > section.section1 .intro-content p b {
   font-size: 2.5rem;
@@ -227,7 +230,7 @@ main > section.section1 .intro-content .pencil {
   display: block;
   position: absolute;
   top: 650px;
-  right: 350px;
+  right: 25%;
   width: 200px;
   height: 200px;
   background: url(../img/main-pencil.png) no-repeat 50% / contain;
@@ -393,6 +396,21 @@ main > section.section2 {
   }
 }
 
+.section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.section2 .about-me-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: #55f; */
+}
+
 .section2 .blur-wrap .blur li:nth-child(1) {
   position: absolute;
   left: -150px;
@@ -417,65 +435,30 @@ main > section.section2 {
   height: 324px;
   background: url(../img/blur-blue.png) no-repeat 50% / contain;
 }
+
 .section2 .pic-wrap {
-  position: relative;
-}
-.section2 .pic-wrap li {
-  position: absolute;
-}
-.section2 .pic-wrap li:nth-child(1) {
-  width: 265px;
-  height: 445px;
-  background: url(../img/aboutme-pic.png) no-repeat 50% / contain;
-  top: 335px;
-  left: 260px;
-  z-index: 4;
-}
-.section2 .pic-wrap li:nth-child(2) {
-  width: 550px;
-  height: 564px;
-  background: url(../img/aboutme-pic2.png) no-repeat 50% / contain;
-  top: 237px;
-  left: 90px;
-  z-index: 3;
-}
-.section2 .pic-wrap li:nth-child(3) {
-  width: 672px;
-  height: 713px;
-  background: url(../img/aboutme-pic3.png) no-repeat 50% / contain;
-  top: 159px;
-  left: 37px;
-  z-index: 2;
-}
-.section2 .pic-wrap li:nth-child(4) {
-  width: 574px;
-  height: 550px;
-  background: url(../img/aboutme-pic4.png) no-repeat 50% / contain;
-  top: 202px;
-  left: 51px;
-  z-index: 1;
-}
-.section2 .pic-wrap li:nth-child(5) {
-  width: 651px;
-  height: 513px;
-  background: url(../img/aboutme-pic5.png) no-repeat 50% / contain;
-  top: 266px;
-  left: 40px;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+
+  /* border: 1px solid #000; */
+  width: 50%;
 }
 
 .introduce-slider-wrap {
   width: 700px;
   height: 610px;
-  /* background: #ff0; */
-  position: absolute;
-  top: 230px;
-  right: 200px;
+  margin: 0 auto;
+  position: relative;
   overflow: hidden;
+  /* background: #0ff; */
 }
 .introduce-slider .swiper-slide {
   width: 100%;
   height: 100%;
-  position: relative;
+  top: 0;
+  left: 0;
+
   padding: 0 30px;
 }
 .swiper-slide .content {
@@ -487,10 +470,10 @@ main > section.section2 {
   word-break: keep-all;
 }
 .swiper-slide .content h3 {
-  font-size: 36px;
+  font-size: 46px;
 }
 .swiper-slide .content-detail {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 47px;
   line-height: 1.2;
 }
@@ -619,12 +602,13 @@ main > section.section2 {
   height: 80px;
   margin: 0 auto;
   background: url(../img/information-title.png) no-repeat 50% / contain;
+  /* margin-top: 30px; */
 }
 .swiper-slide .information .information-content {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 .swiper-slide .information p {
-  font-size: 24px;
+  font-size: 28px;
   padding: 0 50px;
 }
 .swiper-slide .content-tag li:nth-child(1) {
@@ -869,19 +853,6 @@ main > section.section3 {
   height: 100%;
 }
 
-.swiper-slide .pic-wrap::before {
-  content: '';
-  display: block;
-  width: 716px;
-  height: 597px;
-  background: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: absolute;
-  top: 20px;
-  left: 93px;
-  z-index: 2;
-}
-
 /* melody-mangrove */
 
 .section3 {
@@ -928,12 +899,13 @@ main > section.section3 {
   z-index: 1;
 }
 .swiper-slide .melody-mangrove {
-  width: 655px;
-  height: 432px;
+  width: 663px;
+  height: 553px;
   margin: 0 auto;
-  background: url(../img/melodymangrove-pic.png) no-repeat 50% / cover;
+  background: url(../img/melodymangrove-all.png) no-repeat 50% / contain;
   position: relative;
   z-index: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .swiper-slide .melody-mangrove::before {
   content: '';
@@ -946,10 +918,11 @@ main > section.section3 {
   z-index: 3;
 }
 .swiper-slide .aquarium {
-  width: 655px;
-  height: 432px;
+  width: 663px;
+  height: 553px;
   margin: 0 auto;
-  background: url(../img/aquarium-pic.png) no-repeat 50% / contain;
+  background: url(../img/aquarium-all.png) no-repeat 50% / contain;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
   z-index: 10;
 }
@@ -984,10 +957,11 @@ main > section.section3 {
   z-index: 3;
 }
 .swiper-slide .coco {
-  width: 655px;
-  height: 432px;
+  width: 663px;
+  height: 553px;
   margin: 0 auto;
-  background: url(../img/coco-pic.png) no-repeat 50% / contain;
+  background: url(../img/coco-all.png) no-repeat 50% / contain;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
   z-index: 10;
 }
@@ -1020,14 +994,16 @@ main > section.section3 {
   width: 143px;
   height: 141px;
   background: url(../img/coco-tape.png) no-repeat 50% / contain;
+
   z-index: 3;
 }
 .swiper-slide .sigong {
-  width: 655px;
-  height: 432px;
+  width: 663px;
+  height: 553px;
   margin: 0 auto;
-  background: url(../img/sigong-pic.png) no-repeat 0% / cover;
+  background: url(../img/sigong-all.png) no-repeat 50% / contain;
   position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 10;
 }
 .sigong-blur-wrap ul li:nth-child(1) {
@@ -1298,13 +1274,12 @@ main > section.section4 {
 .card-wrap {
   width: 88.3854%;
   display: flex;
-  justify-content: space-between;
-  /* border: 1px solid #000; */
+  justify-content: center;
+  gap: 100px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* perspective: 600px; */
 }
 .card {
   width: 379px;

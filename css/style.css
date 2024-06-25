@@ -31,8 +31,14 @@ body {
 a,
 a:hover,
 body {
-  /* cursor: none; */
+  cursor: none;
 }
+
+#loading,
+#loading * {
+  cursor: default;
+}
+
 #loading {
   position: fixed;
   width: 100%;
@@ -76,9 +82,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 67px;
-  height: 65px;
-  background: url(../img/sun.png) no-repeat 0 0;
+  width: 65px;
+  height: 63px;
+  background: url(../img/cursor.png) no-repeat 50% / contain;
 
   pointer-events: none;
   user-select: none;
@@ -96,7 +102,7 @@ body {
   transform: translate(calc(-50% + 6px), calc(-50% + - 4px));
   width: 10px;
   height: 10px;
-  background: #000;
+  background: #ffe600;
   border-radius: 50%;
 
   /* 마우스에 걸리적 거리지 말 것! */
@@ -377,11 +383,6 @@ main > section.section2 {
 [data-aos='puff-in-center'].aos-animate {
   animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
-/* 
-.section2 h2.animate {
-  animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  opacity: 1; 
-} */
 
 @keyframes puff-in-center {
   0% {
@@ -624,7 +625,7 @@ main > section.section2 {
   background: url(../img/aboutme-tape4.png) no-repeat 50% / contain;
 }
 main > section.section3 {
-  background: url(/img/bg.png) no-repeat 50% / cover;
+  background: url(../img/bg.png) no-repeat 50% / cover;
 }
 .skill-wrap {
   width: 100%;

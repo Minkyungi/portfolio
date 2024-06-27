@@ -312,7 +312,7 @@ main > section.section1 .intro-content .pencil {
   top: 0;
   left: 0;
 }
-.portfolio-process {
+.portfolio-process a {
   display: block;
   width: 50px;
   height: 83px;
@@ -323,6 +323,7 @@ main > section.section1 .intro-content .pencil {
   cursor: pointer;
   animation: blink-1 2s both infinite;
 }
+
 @keyframes blink-1 {
   0%,
   50%,
@@ -1139,13 +1140,14 @@ main > section.section3 {
   height: 100%;
 }
 /* 배너 */
-.swiper-slide:nth-child(6) {
-  padding: 0px 50px;
+.works-slider .swiper-slide:nth-child(6) {
+  padding: 0;
 }
 .wrapper {
   width: 100%;
   text-align: center;
-  margin-top: -80px;
+  /* margin-top: -80px; */
+  margin-top: 15px;
 }
 .polaroid {
   background: #fff;
@@ -1153,8 +1155,8 @@ main > section.section3 {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 .polaroid img {
-  max-width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞춥니다 */
-  height: auto; /* 높이를 자동으로 설정하여 비율을 유지합니다 */
+  max-width: 100%;
+  height: auto;
 }
 .caption {
   font-size: 1.125rem;
@@ -1163,13 +1165,13 @@ main > section.section3 {
 }
 .item {
   display: inline-block;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   filter: grayscale(100%);
-  position: relative; /* Ensure items are relatively positioned */
+  position: relative;
 }
 
 .item .polaroid {
-  position: relative; /* Ensure the pseudo-element is positioned correctly */
+  position: relative;
   display: inline-block;
 }
 

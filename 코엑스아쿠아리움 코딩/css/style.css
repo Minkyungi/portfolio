@@ -316,35 +316,36 @@ main > section {
   color: #867f7f;
 }
 .program-slider .swiper-slide .program-pic1 {
-  width: 341px;
+  width: 100%;
   height: 250px;
   background: url(../img/인어공주\ 동화\ 만들기.webp) no-repeat 50% / cover;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
 }
 .program-slider .swiper-slide .program-pic2 {
-  width: 341px;
+  width: 100%;
   height: 250px;
   background: url(../img/가오리\ 생태설명회.webp) no-repeat 50% / cover;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
 }
 .program-slider .swiper-slide .program-pic3 {
-  width: 341px;
+  width: 100%;
   height: 250px;
   background: url(../img/상어\ 생태설명회.webp) no-repeat 50% / cover;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
 }
 .program-slider .swiper-slide .program-pic4 {
-  width: 341px;
+  width: 100%;
   height: 250px;
   background: url(../img/펭귄\ 생태설명회.jpg) no-repeat 50% / cover;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
 }
 .program-slider .swiper-slide .program-pic5 {
-  width: 341px;
+  /* width: 341px; */
+  width: 100%;
   height: 250px;
   background: url(../img/물범\ 생태설명회.jpg) no-repeat 50% / cover;
   overflow: hidden;
@@ -1007,14 +1008,13 @@ main > section.section4 {
   position: fixed;
   bottom: 100px;
   right: 100px;
-  background: khaki;
+  background: url(../img/top.jpeg) no-repeat 80% / cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 #000;
   width: 70px;
   height: 70px;
+  border-radius: 50px;
   font-weight: bold;
   font-size: 1.5rem;
   cursor: pointer;

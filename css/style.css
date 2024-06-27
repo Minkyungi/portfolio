@@ -1169,7 +1169,9 @@ main > section.section3 {
   filter: grayscale(100%);
   position: relative;
 }
-
+.item:nth-child(5) {
+  margin: -20px;
+}
 .item .polaroid {
   position: relative;
   display: inline-block;

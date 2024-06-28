@@ -89,7 +89,7 @@ body {
 
   pointer-events: none;
   user-select: none;
-  z-index: 1;
+  z-index: 100000;
 }
 
 .cursor.click {
@@ -1148,6 +1148,7 @@ main > section.section3 {
   width: 100%;
   text-align: center;
   margin-top: 5vw;
+  /* margin-top: -4vw; */
 }
 .polaroid {
   background: #fff;
@@ -1170,7 +1171,7 @@ main > section.section3 {
   position: relative;
 }
 .item:nth-child(5) {
-  margin: -20px;
+  margin: -30px;
 }
 .item .polaroid {
   position: relative;
@@ -1185,7 +1186,7 @@ main > section.section3 {
 }
 
 .item:nth-of-type(4n + 1) {
-  transform: scale(0.8, 0.8) rotate(5deg);
+  transform: scale(0.6, 0.6) rotate(5deg);
   transition: all 0.35s;
 }
 
@@ -1199,7 +1200,7 @@ main > section.section3 {
 }
 
 .item:nth-of-type(4n + 2) {
-  transform: scale(0.8, 0.8) rotate(-5deg);
+  transform: scale(0.6, 0.6) rotate(-5deg);
   transition: all 0.35s;
 }
 
@@ -1213,7 +1214,7 @@ main > section.section3 {
 }
 
 .item:nth-of-type(4n + 4) {
-  transform: scale(0.8, 0.8) rotate(3deg);
+  transform: scale(0.6, 0.6) rotate(3deg);
   transition: all 0.35s;
 }
 
@@ -1227,7 +1228,7 @@ main > section.section3 {
 }
 
 .item:nth-of-type(4n + 3) {
-  transform: scale(0.8, 0.8) rotate(-3deg);
+  transform: scale(0.6, 0.6) rotate(-3deg);
   transition: all 0.35s;
 }
 

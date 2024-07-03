@@ -78,7 +78,7 @@ body.lb-disable-scrolling {
 .lb-next,
 .lb-prev {
   height: 100%;
-  cursor: pointer;
+  cursor: none;
   display: block;
 }
 .lb-nav a.lb-prev {
@@ -165,7 +165,7 @@ body.lb-disable-scrolling {
   transition: opacity 0.2s;
 }
 .lb-data .lb-close:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   filter: alpha(Opacity=100);
   opacity: 1;
 }

@@ -29,6 +29,11 @@ body {
 .hidden {
   display: none;
 }
+a,
+a:hover,
+body {
+  cursor: none;
+}
 
 #loading,
 #loading * {
